@@ -7,7 +7,7 @@ const HomeRoute=require("./src/Controllers/HomePage/Home.js")
 const AssemblyHomeRoute=require("./src/Controllers/Assembly/AssemblyHome.js")
 const AssemblyLineRoute=require("./src/Controllers/Assembly/AssemblyLineWise.js")
 const SMTLineRoute = require("./src/Controllers/SMTLine/SmtLine.js");
- 
+const SMTLineStationRoute = require("./src/Controllers/SMTLine/SmtLineStation.js");
  
 const app = express();
 
@@ -30,6 +30,7 @@ app.use("/api/login", loginRoute);
   app.use("/api/AssemblyHome",AssemblyHomeRoute );
   app.use("/api/AssemblyLine",AssemblyLineRoute );
   app.use("/api/smtLine", SMTLineRoute);
+   app.use("/api/smtStation", SMTLineStationRoute);
 const PORT = process.env.PORT || 3008;
 app.listen(PORT, () => {
   console.log("Server Listening on PORT:", PORT);
